@@ -1,0 +1,22 @@
+# macOS
+.DS_Store
+.netrc
+# Xcode
+xcuserdata/
+*.xcodeproj/*
+!*.xcodeproj/project.pbxproj
+!*.xcodeproj/xcshareddata/
+!*.xcodeproj/project.xcworkspace/
+!*.xcworkspace/contents.xcworkspacedata
+/*.gcno
+**/xcshareddata/WorkspaceSettings.xcsettings
+# SwiftPM
+Packages
+build/
+xcuserdata
+DerivedData/
+*.xcodeproj
+.swiftpm
+# Mercurial
+.hg/
+#.hgignore
