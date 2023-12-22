@@ -79,7 +79,9 @@ class AMDemodulator: AudioDemodulator {
                                      15, // * 25 * 2
                                      Float(Self.AUDIO_FILTER_HZ) / Float(audioSampleHz),
                                      windowFunction: WindowFunction.blackman)
-        let last = downSampleAF
+//        let audioAGC = AutoGainControl(downSampleAF, gain: 1e4)
+        let audioAGC = AGC(downSampleAF, gain: 1e3)
+        let last = audioAGC
         print("AMDemodulator", "source", source.sampleFrequency(), "downSample", downSampleHz, "AF", last.sampleFrequency(), "audio", audioOut.sampleFrequency())
         assert(last.sampleFrequency() == audioOut.sampleFrequency())
        

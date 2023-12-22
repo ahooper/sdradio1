@@ -82,9 +82,14 @@ class ReceiveThread: Thread, ReceiveThreadProtocol {
         sdr.setOption(SDRplay.OptAntenna, SDRplay.OptAntenna_A)
         sdr.setOption(SDRplay.OptRFGainReduction, 40)
         sdr.setOption(SDRplay.OptBandwidth, SDRplay.OptBandwidth_1_536)
+        //sdr.setOption(SDRplay.OptDebug, SDRplay.Opt_Enable)
 
         audioOut = AudioOutput()
         sdr.sampleHz = audioOut.sampleFrequency() * 50 // 2.4 MHz
+//        sdr.sampleHz = 6000000
+//        sdr.setOption(SDRplay.OptBandwidth, SDRplay.OptBandwidth_1_536)
+//        sdr.setOption(SDRplay.OptIFType, SDRplay.OptIF_1_620)
+//        print("Low IF fs", sdr.sampleFrequency())
 
         demodulator = FMDemodulator(sdr, audioOut)
         
@@ -131,7 +136,9 @@ class ReceiveThread: Thread, ReceiveThreadProtocol {
     
     func startReceive() {
         print("ReceiveThread", "startReceive")
+        sdr.setOption(SDRplay.OptDebug, SDRplay.Opt_Enable)
         sdr.startReceive()
+        sdr.setOption(SDRplay.OptDebug, SDRplay.Opt_Disable)
         audioOut.resume()
     }
     

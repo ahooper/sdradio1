@@ -38,7 +38,88 @@ class AppDelegate: NSObject, NSApplicationDelegate {
         }
     }
     
+    fileprivate func setupData() {
+        let context = persistentContainer.viewContext
+
+        do {
+            let fr = Band.fetchRequest()
+            let count = try context.count(for: fr)
+            print("Bands count", count)
+            if count == 0 {
+                let AM = Band(context: context)
+                AM.name          = "AM"
+                AM.antenna       = "Antenna C"
+                AM.demodulator   = "AM"
+                AM.frequency     = 1_000
+                AM.step          = 10
+                
+                let FM = Band(context: context)
+                FM.name          = "FM"
+                FM.antenna       = "Antenna A"
+                FM.demodulator   = "FM"
+                FM.frequency     = 100_100
+                FM.step          = 200
+                
+                let Wx = Band(context: context)
+                Wx.name          = "Weather"
+                Wx.antenna       = "Antenna A"
+                Wx.demodulator   = "FM"
+                Wx.frequency     = 162_400
+                Wx.step          = 25
+                
+                try context.save()
+            }
+        } catch let error as NSError {
+            print("Bands setup failed", error.localizedDescription, error.userInfo)
+        }
+
+        do {
+            let fr = Station.fetchRequest()
+            let count = try context.count(for: fr)
+            print("Stations count", count)
+            if count == 0 {
+                let bandFetch = Band.fetchRequest()
+                bandFetch.fetchLimit = 1
+                bandFetch.predicate = NSPredicate(format: "name == %@", "FM")
+                let FMband = try context.fetch(bandFetch).first
+                bandFetch.predicate = NSPredicate(format: "name == %@", "AM")
+                let AMband = try context.fetch(bandFetch).first
+                bandFetch.predicate = NSPredicate(format: "name == %@", "Weather")
+                let Wxband = try bandFetch.execute().first
+                
+                let fm96 = Station(context: context)
+                fm96.name = "CFMK"
+                fm96.frequency = 96_300
+                fm96.demodulator = "FM"
+                fm96.band = FMband
+                let fm98 = Station(context: context)
+                fm98.name = "CFLY"
+                fm98.frequency = 98_300
+                fm98.demodulator = "FM"
+                fm98.band = FMband
+                let xjv = Station(context: context)
+                xjv.name = "XJV363"
+                xjv.frequency = 162_400
+                xjv.demodulator = "FM"
+                xjv.band = Wxband
+                let siggen = Station(context: context)
+                siggen.name = "SigGen"
+                siggen.frequency = 1_400
+                siggen.demodulator = "AM"
+                siggen.band = AMband
+                
+                try context.save()
+            }
+        } catch let error as NSError {
+            print("Stations setup failed", error.localizedDescription, error.userInfo)
+        }
+        
+        
+    }
+    
     func applicationDidFinishLaunching(_ aNotification: Notification) {
+        setupData()
+        
         // Create the SwiftUI view and set the context as the value for the managedObjectContext environment keyPath.
         // Add `@Environment(\.managedObjectContext)` in the views that will need the context.
         let contentView = ContentView(frequency: 96300, receiveThread: receiveThread,

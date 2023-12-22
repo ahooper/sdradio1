@@ -33,8 +33,20 @@ struct CustomToggleStyle: ToggleStyle {
 
 struct ContentView: View {
     @Environment(\.managedObjectContext) var managedObjectContext
+    // https://www.hackingwithswift.com/quick-start/swiftui/how-to-create-a-core-data-fetch-request-using-fetchrequest
+    @FetchRequest(sortDescriptors: [
+        SortDescriptor(\.name),
+    ]) var bands: FetchedResults<Band>
+    @FetchRequest(sortDescriptors: [
+        SortDescriptor(\.name),
+    ]) var stations: FetchedResults<Station>
 #if false
-    @FetchRequest private var previousBand: FetchedResults<Band>
+    @FetchRequest(
+        sortDescriptors: [
+            SortDescriptor(\.name),
+            ],
+        predicate: NSPredicate(format: "name == %@", "previous")
+    ) private var previousBand: FetchedResults<Band>
     @FetchRequest private var previousStation: FetchedResults<Station>
 #endif
     @State var frequency: Double
@@ -46,11 +58,16 @@ struct ContentView: View {
     @State var antenna: String
     @State var gainChoices: [Int]
     @State var gain: Int
+    @State var selectedBand: Band?
+    @State var selectedStation: Station?
     @FocusState private var frequencyFocused: Bool
                 // https://nsscreencast.com/episodes/529-swiftui-focus
-    @State var keyDownEvent = KeyDownEvent()
+    @State private var keyDownEvent = KeyDownEvent()
+    @State var saveStation: String = ""
+    @State private var presentEdit = false
     let timer = Timer.publish(every: 5/*seconds*/,
                               on: .main, in: .common).autoconnect()
+    
 #if false
     init() {
         let stationFetch: NSFetchRequest<Station> = Station.fetchRequest()
@@ -80,9 +97,9 @@ struct ContentView: View {
                             .multilineTextAlignment(.trailing)
                             .focused($frequencyFocused)
                             .onSubmit {
-                                //print("Frequency", frequency)
+                                print("Frequency", frequency)
                                 receiveThread.setFrequency(frequency * 1e3)
-                        }
+                            }
                         
                         HStack {
                             Spacer().padding(.leading)
@@ -94,7 +111,7 @@ struct ContentView: View {
                                 .multilineTextAlignment(.trailing)
                                 .onSubmit {
                                     //print("Frequency step", frequencyStep)
-                            }
+                                }
                             
                             Button("⬆︎", action:{
                                 //print("Frequency up", frequencyStep)
@@ -168,6 +185,58 @@ struct ContentView: View {
                             gain = newValue
                         }
                     }
+                    VStack {
+                        // https://stackoverflow.com/a/71594140
+                        Picker("Band", selection: $selectedBand) {
+                            Text("").tag(Optional<Band>(nilLiteral: ()))
+                            ForEach(bands) { b in
+                                Text(b.name!)
+                                .tag(Optional(b))
+                            }
+                        }
+                        .pickerStyle(.menu)
+                        .onChange(of: selectedBand) { newValue in
+                            setToBand(newValue)
+                        }
+                        Picker("Station", selection: $selectedStation) {
+                            Text("").tag(Optional<Station>(nilLiteral: ()))
+                            ForEach(stations) { s in
+                                Text("\(s.name!) \(s.demodulator!) \(String(format: "%.0f", locale: .current, arguments: [s.frequency]))")
+                                .tag(Optional(s))
+                            }
+                        }
+                        .pickerStyle(.menu)
+                        .onChange(of: selectedStation) { newValue in
+                            setToStation(newValue)
+                        }
+                        // https://developer.apple.com/forums/thread/686024
+                        HStack {
+                            TextField("", text: $saveStation, prompt: Text("New station name"))
+                                .onSubmit {
+                                    print("New station", saveStation)
+                                    let s = Station(context: managedObjectContext)
+                                    s.name = saveStation
+                                    s.frequency = frequency
+                                    s.demodulator = demodulator
+                                    s.band = selectedBand
+                                    managedObjectContext.insert(s)
+                                    saveStation = ""
+                                }
+                            Button("Edit") {
+                                presentEdit = true
+                            }
+                            .sheet(isPresented: $presentEdit) {
+                                VStack {
+                                    StationsView()
+                                    Spacer()
+                                    Button("Dismiss") { presentEdit.toggle() }
+                                    Spacer()
+                                }
+                                .frame(width: 500, height: 500)
+    //                            .padding(10)
+                            }
+                        }
+                    }
                     Spacer().padding(.trailing)
                 }
             }
@@ -200,6 +269,37 @@ struct ContentView: View {
 
     }
     
+    func setToBand(_ selected:Band?) {
+        print("band", selected?.debugDescription ?? "null")
+        if let selected = selected {
+            frequency = selected.frequency
+            if let demod = selected.demodulator {
+                demodulator = demod
+            }
+            if let ant = selected.antenna {
+                antenna = ant
+            }
+            frequencyStep = selected.step
+        }
+    }
+    
+    func setToStation(_ selected:Station?) {
+        print("station", selected?.debugDescription ?? "null")
+        if let selected = selected {
+            if selected.band != selectedBand {  // before frequency and demodulator are set
+                selectedBand = selected.band
+            }
+            DispatchQueue.main.async {
+                frequency = selected.frequency
+                if started { receiveThread.setFrequency(frequency) }
+                if let demod = selected.demodulator {
+                    demodulator = demod
+                    if started { receiveThread.setDemodulator(demodulator) }
+                }
+            }
+        }
+    }
+
 }
 
 

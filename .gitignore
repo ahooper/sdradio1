@@ -8,15 +8,13 @@ xcuserdata/
 !*.xcodeproj/xcshareddata/
 !*.xcodeproj/project.xcworkspace/
 !*.xcworkspace/contents.xcworkspacedata
-/*.gcno
 **/xcshareddata/WorkspaceSettings.xcsettings
 # SwiftPM
 Packages
 build/
-xcuserdata
 DerivedData/
-*.xcodeproj
 .swiftpm
 # Mercurial
 .hg/
-#.hgignore
+# JetBrains
+.idea
