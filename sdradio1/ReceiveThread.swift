@@ -73,6 +73,7 @@ class ReceiveThread: Thread, ReceiveThreadProtocol {
     static let demodulators =
                 ["AM": AMDemodulator.self,
                  "FM": FMDemodulator.self,
+                 "NFM": NFMDemodulator.self,
                  "No demod.": AudioDemodulator.self]
     var demodulator: AudioDemodulator
 

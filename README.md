@@ -1,2 +1,2 @@
-# sdrplay1
+# sdradio1
 SDRplay radio receiver SwiftUI

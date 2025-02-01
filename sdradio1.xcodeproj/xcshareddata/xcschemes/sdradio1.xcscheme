@@ -1,6 +1,6 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <Scheme
-   LastUpgradeVersion = "1500"
+   LastUpgradeVersion = "1610"
    version = "1.3">
    <BuildAction
       parallelizeBuildables = "YES"
@@ -15,9 +15,9 @@
             <BuildableReference
                BuildableIdentifier = "primary"
                BlueprintIdentifier = "A14A584A298AB5BC00D2B500"
-               BuildableName = "sdrplay1.app"
-               BlueprintName = "sdrplay1"
-               ReferencedContainer = "container:sdrplay1.xcodeproj">
+               BuildableName = "sdradio1.app"
+               BlueprintName = "sdradio1"
+               ReferencedContainer = "container:sdradio1.xcodeproj">
             </BuildableReference>
          </BuildActionEntry>
       </BuildActionEntries>
@@ -33,9 +33,9 @@
             <BuildableReference
                BuildableIdentifier = "primary"
                BlueprintIdentifier = "A14A5862298AB5BE00D2B500"
-               BuildableName = "sdrplay1Tests.xctest"
-               BlueprintName = "sdrplay1Tests"
-               ReferencedContainer = "container:sdrplay1.xcodeproj">
+               BuildableName = "sdradio1Tests.xctest"
+               BlueprintName = "sdradio1Tests"
+               ReferencedContainer = "container:sdradio1.xcodeproj">
             </BuildableReference>
          </TestableReference>
          <TestableReference
@@ -43,9 +43,9 @@
             <BuildableReference
                BuildableIdentifier = "primary"
                BlueprintIdentifier = "A14A586D298AB5BE00D2B500"
-               BuildableName = "sdrplay1UITests.xctest"
-               BlueprintName = "sdrplay1UITests"
-               ReferencedContainer = "container:sdrplay1.xcodeproj">
+               BuildableName = "sdradio1UITests.xctest"
+               BlueprintName = "sdradio1UITests"
+               ReferencedContainer = "container:sdradio1.xcodeproj">
             </BuildableReference>
          </TestableReference>
       </Testables>
@@ -65,9 +65,9 @@
          <BuildableReference
             BuildableIdentifier = "primary"
             BlueprintIdentifier = "A14A584A298AB5BC00D2B500"
-            BuildableName = "sdrplay1.app"
-            BlueprintName = "sdrplay1"
-            ReferencedContainer = "container:sdrplay1.xcodeproj">
+            BuildableName = "sdradio1.app"
+            BlueprintName = "sdradio1"
+            ReferencedContainer = "container:sdradio1.xcodeproj">
          </BuildableReference>
       </BuildableProductRunnable>
       <CommandLineArguments>
@@ -100,9 +100,9 @@
          <BuildableReference
             BuildableIdentifier = "primary"
             BlueprintIdentifier = "A14A584A298AB5BC00D2B500"
-            BuildableName = "sdrplay1.app"
-            BlueprintName = "sdrplay1"
-            ReferencedContainer = "container:sdrplay1.xcodeproj">
+            BuildableName = "sdradio1.app"
+            BlueprintName = "sdradio1"
+            ReferencedContainer = "container:sdradio1.xcodeproj">
          </BuildableReference>
       </BuildableProductRunnable>
    </ProfileAction>

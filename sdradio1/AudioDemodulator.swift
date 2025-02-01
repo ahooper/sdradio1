@@ -58,6 +58,42 @@ class FMDemodulator: AudioDemodulator {
     
 }
 
+class NFMDemodulator: AudioDemodulator {
+    // e.g. Weather radio
+    static let FREQUENCY_DEVIATION = 10_000,
+               AUDIO_FILTER_HZ = 5_000
+
+    required init(_ source: BufferedSource<ComplexSamples>, _ audioOut: AudioOutput) {
+        let audioSampleHz = audioOut.sampleFrequency()
+        let downSampleHz = audioSampleHz * 5
+        let downSampleIQ = UpFIRDown(source: source,
+                                     Int(downSampleHz),
+                                     Int(source.sampleFrequency()),
+                                     15,
+                                     Float(Self.FREQUENCY_DEVIATION) / Float(downSampleHz),
+                                     windowFunction: WindowFunction.blackman)
+        super.init(head: downSampleIQ)
+        let demodulated = FMDemodulate(source: downSampleIQ,
+                                       modulationFactor: 0.5)
+        let downSampleAF = UpFIRDown(source: demodulated,
+                                     Int(audioSampleHz),
+                                     Int(downSampleHz),
+                                     15, // * 25 * 2
+                                     Float(Self.AUDIO_FILTER_HZ) / Float(audioSampleHz),
+                                     windowFunction: WindowFunction.blackman)
+        //let audioAGC = AutoGainControl(source:audioDC)
+        let last = downSampleAF
+        print("NFMDemodulator", "source", source.sampleFrequency(),
+              "downSample", downSampleHz,
+              "AF", last.sampleFrequency(),
+              "audio", audioOut.sampleFrequency())
+        assert(last.sampleFrequency() == audioOut.sampleFrequency())
+        
+        audioOut.connect(source: last)
+    }
+    
+}
+
 class AMDemodulator: AudioDemodulator {
     static let BANDWIDTH = 10_000,
                AUDIO_FILTER_HZ = 5000

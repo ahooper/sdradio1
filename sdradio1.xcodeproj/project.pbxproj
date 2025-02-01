@@ -3,7 +3,7 @@
 	archiveVersion = 1;
 	classes = {
 	};
-	objectVersion = 54;
+	objectVersion = 60;
 	objects = {
 
 /* Begin PBXBuildFile section */
@@ -11,12 +11,11 @@
 		A12B05C2299977B90042BE0F /* AudioDemodulator.swift in Sources */ = {isa = PBXBuildFile; fileRef = A12B05C1299977B90042BE0F /* AudioDemodulator.swift */; };
 		A14A584F298AB5BC00D2B500 /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = A14A584E298AB5BC00D2B500 /* AppDelegate.swift */; };
 		A14A5851298AB5BC00D2B500 /* ContentView.swift in Sources */ = {isa = PBXBuildFile; fileRef = A14A5850298AB5BC00D2B500 /* ContentView.swift */; };
-		A14A5854298AB5BC00D2B500 /* sdrplay1.xcdatamodeld in Sources */ = {isa = PBXBuildFile; fileRef = A14A5852298AB5BC00D2B500 /* sdrplay1.xcdatamodeld */; };
 		A14A5856298AB5BE00D2B500 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = A14A5855298AB5BE00D2B500 /* Assets.xcassets */; };
 		A14A5859298AB5BE00D2B500 /* Preview Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = A14A5858298AB5BE00D2B500 /* Preview Assets.xcassets */; };
 		A14A585C298AB5BE00D2B500 /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = A14A585A298AB5BE00D2B500 /* Main.storyboard */; };
 		A14A5868298AB5BE00D2B500 /* sdrplay1Tests.swift in Sources */ = {isa = PBXBuildFile; fileRef = A14A5867298AB5BE00D2B500 /* sdrplay1Tests.swift */; };
-		A14A5873298AB5BF00D2B500 /* sdrplay1UITests.swift in Sources */ = {isa = PBXBuildFile; fileRef = A14A5872298AB5BF00D2B500 /* sdrplay1UITests.swift */; };
+		A14A5873298AB5BF00D2B500 /* sdradio1UITests.swift in Sources */ = {isa = PBXBuildFile; fileRef = A14A5872298AB5BF00D2B500 /* sdradio1UITests.swift */; };
 		A14A5890298AB7E800D2B500 /* Accelerate.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = A14A588F298AB7E800D2B500 /* Accelerate.framework */; };
 		A14A58C4298AE69600D2B500 /* TestAudio.swift in Sources */ = {isa = PBXBuildFile; fileRef = A14A58C3298AE69600D2B500 /* TestAudio.swift */; };
 		A14A58D8298C188F00D2B500 /* ReceiveThread.swift in Sources */ = {isa = PBXBuildFile; fileRef = A14A58D7298C188F00D2B500 /* ReceiveThread.swift */; };
@@ -24,9 +23,6 @@
 		A14E4C44299D36B100977B3E /* AudioToolbox.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = A14E4C43299D36B100977B3E /* AudioToolbox.framework */; };
 		A14E4C49299F8D9B00977B3E /* TestSpectrum.swift in Sources */ = {isa = PBXBuildFile; fileRef = A14E4C48299F8D9B00977B3E /* TestSpectrum.swift */; };
 		A14E4C4F29A4330700977B3E /* TestCycle.swift in Sources */ = {isa = PBXBuildFile; fileRef = A14E4C4E29A4330700977B3E /* TestCycle.swift */; };
-		A16B9D962B3305CF00F33DCD /* sdrlib in Resources */ = {isa = PBXBuildFile; fileRef = A16B9D952B3305CF00F33DCD /* sdrlib */; };
-		A16B9D972B3305CF00F33DCD /* sdrlib in Resources */ = {isa = PBXBuildFile; fileRef = A16B9D952B3305CF00F33DCD /* sdrlib */; };
-		A16B9D992B3305F400F33DCD /* sdrlib in Frameworks */ = {isa = PBXBuildFile; productRef = A16B9D982B3305F400F33DCD /* sdrlib */; };
 		A17162932A000BCE0003AFC8 /* OptionalBinding.swift in Sources */ = {isa = PBXBuildFile; fileRef = A17162922A000BCE0003AFC8 /* OptionalBinding.swift */; };
 		A1AF69E72B3207A300177328 /* FIRFilterTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = A1AF69D92B3207A300177328 /* FIRFilterTests.swift */; };
 		A1AF69E82B3207A300177328 /* ArrayAndComplexAsserts.swift in Sources */ = {isa = PBXBuildFile; fileRef = A1AF69DA2B3207A300177328 /* ArrayAndComplexAsserts.swift */; };
@@ -43,6 +39,8 @@
 		A1AF69F32B3207A300177328 /* FIRKernelTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = A1AF69E52B3207A300177328 /* FIRKernelTests.swift */; };
 		A1AF69F42B3207A300177328 /* GaussianRandom.swift in Sources */ = {isa = PBXBuildFile; fileRef = A1AF69E62B3207A300177328 /* GaussianRandom.swift */; };
 		A1BFCDCF29FEDADA00DD412C /* StationsView.swift in Sources */ = {isa = PBXBuildFile; fileRef = A1BFCDCE29FEDADA00DD412C /* StationsView.swift */; };
+		A1F402692D4BAC8F0029265D /* sdrlib in Frameworks */ = {isa = PBXBuildFile; productRef = A1F402682D4BAC8F0029265D /* sdrlib */; };
+		A1F402702D4D04240029265D /* sdradio1.xcdatamodeld in Sources */ = {isa = PBXBuildFile; fileRef = A1F4026E2D4D04240029265D /* sdradio1.xcdatamodeld */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -79,22 +77,21 @@
 		A129866629AA8A990034891E /* KeyDownEvent.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = KeyDownEvent.swift; sourceTree = "<group>"; };
 		A12B05AC29992A0B0042BE0F /* NOTES.md */ = {isa = PBXFileReference; lastKnownFileType = net.daringfireball.markdown; path = NOTES.md; sourceTree = "<group>"; };
 		A12B05C1299977B90042BE0F /* AudioDemodulator.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AudioDemodulator.swift; sourceTree = "<group>"; };
-		A14A584B298AB5BC00D2B500 /* sdrplay1.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = sdrplay1.app; sourceTree = BUILT_PRODUCTS_DIR; };
+		A14A584B298AB5BC00D2B500 /* sdradio1.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = sdradio1.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		A14A584E298AB5BC00D2B500 /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
 		A14A5850298AB5BC00D2B500 /* ContentView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ContentView.swift; sourceTree = "<group>"; };
-		A14A5853298AB5BC00D2B500 /* sdrplay1.xcdatamodel */ = {isa = PBXFileReference; lastKnownFileType = wrapper.xcdatamodel; path = sdrplay1.xcdatamodel; sourceTree = "<group>"; };
 		A14A5855298AB5BE00D2B500 /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
 		A14A5858298AB5BE00D2B500 /* Preview Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = "Preview Assets.xcassets"; sourceTree = "<group>"; };
 		A14A585B298AB5BE00D2B500 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/Main.storyboard; sourceTree = "<group>"; };
 		A14A585D298AB5BE00D2B500 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
-		A14A585E298AB5BE00D2B500 /* sdrplay1.entitlements */ = {isa = PBXFileReference; lastKnownFileType = text.plist.entitlements; path = sdrplay1.entitlements; sourceTree = "<group>"; };
-		A14A5863298AB5BE00D2B500 /* sdrplay1Tests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = sdrplay1Tests.xctest; sourceTree = BUILT_PRODUCTS_DIR; };
+		A14A585E298AB5BE00D2B500 /* sdradio1.entitlements */ = {isa = PBXFileReference; lastKnownFileType = text.plist.entitlements; path = sdradio1.entitlements; sourceTree = "<group>"; };
+		A14A5863298AB5BE00D2B500 /* sdradio1Tests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = sdradio1Tests.xctest; sourceTree = BUILT_PRODUCTS_DIR; };
 		A14A5867298AB5BE00D2B500 /* sdrplay1Tests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = sdrplay1Tests.swift; sourceTree = "<group>"; };
 		A14A5869298AB5BE00D2B500 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
-		A14A586E298AB5BF00D2B500 /* sdrplay1UITests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = sdrplay1UITests.xctest; sourceTree = BUILT_PRODUCTS_DIR; };
-		A14A5872298AB5BF00D2B500 /* sdrplay1UITests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = sdrplay1UITests.swift; sourceTree = "<group>"; };
+		A14A586E298AB5BF00D2B500 /* sdradio1UITests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = sdradio1UITests.xctest; sourceTree = BUILT_PRODUCTS_DIR; };
+		A14A5872298AB5BF00D2B500 /* sdradio1UITests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = sdradio1UITests.swift; sourceTree = "<group>"; };
 		A14A5874298AB5BF00D2B500 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
-		A14A5885298AB6EC00D2B500 /* sdrplay1-Bridging-Header.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = "sdrplay1-Bridging-Header.h"; sourceTree = "<group>"; };
+		A14A5885298AB6EC00D2B500 /* sdradio1-Bridging-Header.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = "sdradio1-Bridging-Header.h"; sourceTree = "<group>"; };
 		A14A588F298AB7E800D2B500 /* Accelerate.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = Accelerate.framework; path = System/Library/Frameworks/Accelerate.framework; sourceTree = SDKROOT; };
 		A14A58C3298AE69600D2B500 /* TestAudio.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TestAudio.swift; sourceTree = "<group>"; };
 		A14A58D7298C188F00D2B500 /* ReceiveThread.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ReceiveThread.swift; sourceTree = "<group>"; };
@@ -103,7 +100,6 @@
 		A14E4C47299E468500977B3E /* set_realtime.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = set_realtime.h; sourceTree = "<group>"; };
 		A14E4C48299F8D9B00977B3E /* TestSpectrum.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TestSpectrum.swift; sourceTree = "<group>"; };
 		A14E4C4E29A4330700977B3E /* TestCycle.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TestCycle.swift; sourceTree = "<group>"; };
-		A16B9D952B3305CF00F33DCD /* sdrlib */ = {isa = PBXFileReference; lastKnownFileType = wrapper; name = sdrlib; path = ../sdrlib; sourceTree = "<group>"; };
 		A17162922A000BCE0003AFC8 /* OptionalBinding.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = OptionalBinding.swift; sourceTree = "<group>"; };
 		A1AF69D92B3207A300177328 /* FIRFilterTests.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = FIRFilterTests.swift; sourceTree = "<group>"; };
 		A1AF69DA2B3207A300177328 /* ArrayAndComplexAsserts.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ArrayAndComplexAsserts.swift; sourceTree = "<group>"; };
@@ -121,6 +117,7 @@
 		A1AF69E62B3207A300177328 /* GaussianRandom.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = GaussianRandom.swift; sourceTree = "<group>"; };
 		A1BFCDCE29FEDADA00DD412C /* StationsView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = StationsView.swift; sourceTree = "<group>"; };
 		A1D2B92729FBF20C003C4C97 /* README.md */ = {isa = PBXFileReference; lastKnownFileType = net.daringfireball.markdown; path = README.md; sourceTree = "<group>"; };
+		A1F4026F2D4D04240029265D /* sdradio1.xcdatamodel */ = {isa = PBXFileReference; lastKnownFileType = wrapper.xcdatamodel; path = sdradio1.xcdatamodel; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -128,8 +125,8 @@
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				A16B9D992B3305F400F33DCD /* sdrlib in Frameworks */,
 				A14A5890298AB7E800D2B500 /* Accelerate.framework in Frameworks */,
+				A1F402692D4BAC8F0029265D /* sdrlib in Frameworks */,
 				A14E4C44299D36B100977B3E /* AudioToolbox.framework in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
@@ -155,10 +152,9 @@
 			isa = PBXGroup;
 			children = (
 				A1D2B92729FBF20C003C4C97 /* README.md */,
-				A1D2B92329FBD26E003C4C97 /* Packages */,
-				A14A584D298AB5BC00D2B500 /* sdrplay1 */,
-				A14A5866298AB5BE00D2B500 /* sdrplay1Tests */,
-				A14A5871298AB5BF00D2B500 /* sdrplay1UITests */,
+				A14A584D298AB5BC00D2B500 /* sdradio1 */,
+				A14A5866298AB5BE00D2B500 /* sdradio1Tests */,
+				A14A5871298AB5BF00D2B500 /* sdradio1UITests */,
 				A14A584C298AB5BC00D2B500 /* Products */,
 				A14A588E298AB7E700D2B500 /* Frameworks */,
 			);
@@ -167,14 +163,14 @@
 		A14A584C298AB5BC00D2B500 /* Products */ = {
 			isa = PBXGroup;
 			children = (
-				A14A584B298AB5BC00D2B500 /* sdrplay1.app */,
-				A14A5863298AB5BE00D2B500 /* sdrplay1Tests.xctest */,
-				A14A586E298AB5BF00D2B500 /* sdrplay1UITests.xctest */,
+				A14A584B298AB5BC00D2B500 /* sdradio1.app */,
+				A14A5863298AB5BE00D2B500 /* sdradio1Tests.xctest */,
+				A14A586E298AB5BF00D2B500 /* sdradio1UITests.xctest */,
 			);
 			name = Products;
 			sourceTree = "<group>";
 		};
-		A14A584D298AB5BC00D2B500 /* sdrplay1 */ = {
+		A14A584D298AB5BC00D2B500 /* sdradio1 */ = {
 			isa = PBXGroup;
 			children = (
 				A14A584E298AB5BC00D2B500 /* AppDelegate.swift */,
@@ -190,15 +186,15 @@
 				A14E4C4E29A4330700977B3E /* TestCycle.swift */,
 				A14A58C3298AE69600D2B500 /* TestAudio.swift */,
 				A14E4C48299F8D9B00977B3E /* TestSpectrum.swift */,
-				A14A5885298AB6EC00D2B500 /* sdrplay1-Bridging-Header.h */,
-				A14A5852298AB5BC00D2B500 /* sdrplay1.xcdatamodeld */,
+				A14A5885298AB6EC00D2B500 /* sdradio1-Bridging-Header.h */,
+				A1F4026E2D4D04240029265D /* sdradio1.xcdatamodeld */,
 				A14A5855298AB5BE00D2B500 /* Assets.xcassets */,
 				A14A585D298AB5BE00D2B500 /* Info.plist */,
-				A14A585E298AB5BE00D2B500 /* sdrplay1.entitlements */,
+				A14A585E298AB5BE00D2B500 /* sdradio1.entitlements */,
 				A14A5857298AB5BE00D2B500 /* Preview Content */,
 				A12B05AC29992A0B0042BE0F /* NOTES.md */,
 			);
-			path = sdrplay1;
+			path = sdradio1;
 			sourceTree = "<group>";
 		};
 		A14A5857298AB5BE00D2B500 /* Preview Content */ = {
@@ -209,23 +205,23 @@
 			path = "Preview Content";
 			sourceTree = "<group>";
 		};
-		A14A5866298AB5BE00D2B500 /* sdrplay1Tests */ = {
+		A14A5866298AB5BE00D2B500 /* sdradio1Tests */ = {
 			isa = PBXGroup;
 			children = (
 				A1AF69D82B3207A300177328 /* sdrlibTests */,
 				A14A5867298AB5BE00D2B500 /* sdrplay1Tests.swift */,
 				A14A5869298AB5BE00D2B500 /* Info.plist */,
 			);
-			path = sdrplay1Tests;
+			path = sdradio1Tests;
 			sourceTree = "<group>";
 		};
-		A14A5871298AB5BF00D2B500 /* sdrplay1UITests */ = {
+		A14A5871298AB5BF00D2B500 /* sdradio1UITests */ = {
 			isa = PBXGroup;
 			children = (
-				A14A5872298AB5BF00D2B500 /* sdrplay1UITests.swift */,
+				A14A5872298AB5BF00D2B500 /* sdradio1UITests.swift */,
 				A14A5874298AB5BF00D2B500 /* Info.plist */,
 			);
-			path = sdrplay1UITests;
+			path = sdradio1UITests;
 			sourceTree = "<group>";
 		};
 		A14A588E298AB7E700D2B500 /* Frameworks */ = {
@@ -259,20 +255,12 @@
 			path = ../../sdrlib/Tests/sdrlibTests;
 			sourceTree = "<group>";
 		};
-		A1D2B92329FBD26E003C4C97 /* Packages */ = {
-			isa = PBXGroup;
-			children = (
-				A16B9D952B3305CF00F33DCD /* sdrlib */,
-			);
-			name = Packages;
-			sourceTree = "<group>";
-		};
 /* End PBXGroup section */
 
 /* Begin PBXNativeTarget section */
-		A14A584A298AB5BC00D2B500 /* sdrplay1 */ = {
+		A14A584A298AB5BC00D2B500 /* sdradio1 */ = {
 			isa = PBXNativeTarget;
-			buildConfigurationList = A14A5877298AB5BF00D2B500 /* Build configuration list for PBXNativeTarget "sdrplay1" */;
+			buildConfigurationList = A14A5877298AB5BF00D2B500 /* Build configuration list for PBXNativeTarget "sdradio1" */;
 			buildPhases = (
 				A14A5847298AB5BC00D2B500 /* Sources */,
 				A14A5848298AB5BC00D2B500 /* Frameworks */,
@@ -282,17 +270,17 @@
 			);
 			dependencies = (
 			);
-			name = sdrplay1;
+			name = sdradio1;
 			packageProductDependencies = (
-				A16B9D982B3305F400F33DCD /* sdrlib */,
+				A1F402682D4BAC8F0029265D /* sdrlib */,
 			);
 			productName = sdrplay1;
-			productReference = A14A584B298AB5BC00D2B500 /* sdrplay1.app */;
+			productReference = A14A584B298AB5BC00D2B500 /* sdradio1.app */;
 			productType = "com.apple.product-type.application";
 		};
-		A14A5862298AB5BE00D2B500 /* sdrplay1Tests */ = {
+		A14A5862298AB5BE00D2B500 /* sdradio1Tests */ = {
 			isa = PBXNativeTarget;
-			buildConfigurationList = A14A587A298AB5BF00D2B500 /* Build configuration list for PBXNativeTarget "sdrplay1Tests" */;
+			buildConfigurationList = A14A587A298AB5BF00D2B500 /* Build configuration list for PBXNativeTarget "sdradio1Tests" */;
 			buildPhases = (
 				A14A585F298AB5BE00D2B500 /* Sources */,
 				A14A5860298AB5BE00D2B500 /* Frameworks */,
@@ -304,14 +292,14 @@
 			dependencies = (
 				A14A5865298AB5BE00D2B500 /* PBXTargetDependency */,
 			);
-			name = sdrplay1Tests;
+			name = sdradio1Tests;
 			productName = sdrplay1Tests;
-			productReference = A14A5863298AB5BE00D2B500 /* sdrplay1Tests.xctest */;
+			productReference = A14A5863298AB5BE00D2B500 /* sdradio1Tests.xctest */;
 			productType = "com.apple.product-type.bundle.unit-test";
 		};
-		A14A586D298AB5BE00D2B500 /* sdrplay1UITests */ = {
+		A14A586D298AB5BE00D2B500 /* sdradio1UITests */ = {
 			isa = PBXNativeTarget;
-			buildConfigurationList = A14A587D298AB5BF00D2B500 /* Build configuration list for PBXNativeTarget "sdrplay1UITests" */;
+			buildConfigurationList = A14A587D298AB5BF00D2B500 /* Build configuration list for PBXNativeTarget "sdradio1UITests" */;
 			buildPhases = (
 				A14A586A298AB5BE00D2B500 /* Sources */,
 				A14A586B298AB5BE00D2B500 /* Frameworks */,
@@ -322,9 +310,9 @@
 			dependencies = (
 				A14A5870298AB5BF00D2B500 /* PBXTargetDependency */,
 			);
-			name = sdrplay1UITests;
+			name = sdradio1UITests;
 			productName = sdrplay1UITests;
-			productReference = A14A586E298AB5BF00D2B500 /* sdrplay1UITests.xctest */;
+			productReference = A14A586E298AB5BF00D2B500 /* sdradio1UITests.xctest */;
 			productType = "com.apple.product-type.bundle.ui-testing";
 		};
 /* End PBXNativeTarget section */
@@ -335,7 +323,7 @@
 			attributes = {
 				BuildIndependentTargetsInParallel = YES;
 				LastSwiftUpdateCheck = 1420;
-				LastUpgradeCheck = 1500;
+				LastUpgradeCheck = 1610;
 				TargetAttributes = {
 					A14A584A298AB5BC00D2B500 = {
 						CreatedOnToolsVersion = 12.4;
@@ -351,7 +339,7 @@
 					};
 				};
 			};
-			buildConfigurationList = A14A5846298AB5BC00D2B500 /* Build configuration list for PBXProject "sdrplay1" */;
+			buildConfigurationList = A14A5846298AB5BC00D2B500 /* Build configuration list for PBXProject "sdradio1" */;
 			compatibilityVersion = "Xcode 9.3";
 			developmentRegion = en;
 			hasScannedForEncodings = 0;
@@ -361,14 +349,15 @@
 			);
 			mainGroup = A14A5842298AB5BC00D2B500;
 			packageReferences = (
+				A1F4026D2D4CDC6E0029265D /* XCLocalSwiftPackageReference "../sdrlib" */,
 			);
 			productRefGroup = A14A584C298AB5BC00D2B500 /* Products */;
 			projectDirPath = "";
 			projectRoot = "";
 			targets = (
-				A14A584A298AB5BC00D2B500 /* sdrplay1 */,
-				A14A5862298AB5BE00D2B500 /* sdrplay1Tests */,
-				A14A586D298AB5BE00D2B500 /* sdrplay1UITests */,
+				A14A584A298AB5BC00D2B500 /* sdradio1 */,
+				A14A5862298AB5BE00D2B500 /* sdradio1Tests */,
+				A14A586D298AB5BE00D2B500 /* sdradio1UITests */,
 			);
 		};
 /* End PBXProject section */
@@ -380,7 +369,6 @@
 			files = (
 				A14A585C298AB5BE00D2B500 /* Main.storyboard in Resources */,
 				A14A5859298AB5BE00D2B500 /* Preview Assets.xcassets in Resources */,
-				A16B9D962B3305CF00F33DCD /* sdrlib in Resources */,
 				A14A5856298AB5BE00D2B500 /* Assets.xcassets in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
@@ -389,7 +377,6 @@
 			isa = PBXResourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				A16B9D972B3305CF00F33DCD /* sdrlib in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -409,7 +396,6 @@
 			files = (
 				A1BFCDCF29FEDADA00DD412C /* StationsView.swift in Sources */,
 				A17162932A000BCE0003AFC8 /* OptionalBinding.swift in Sources */,
-				A14A5854298AB5BC00D2B500 /* sdrplay1.xcdatamodeld in Sources */,
 				A14E4C49299F8D9B00977B3E /* TestSpectrum.swift in Sources */,
 				A14A5851298AB5BC00D2B500 /* ContentView.swift in Sources */,
 				A14E4C42299D0AAF00977B3E /* set_realtime.cpp in Sources */,
@@ -419,6 +405,7 @@
 				A14A58D8298C188F00D2B500 /* ReceiveThread.swift in Sources */,
 				A12B05C2299977B90042BE0F /* AudioDemodulator.swift in Sources */,
 				A14E4C4F29A4330700977B3E /* TestCycle.swift in Sources */,
+				A1F402702D4D04240029265D /* sdradio1.xcdatamodeld in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -448,7 +435,7 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				A14A5873298AB5BF00D2B500 /* sdrplay1UITests.swift in Sources */,
+				A14A5873298AB5BF00D2B500 /* sdradio1UITests.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -457,12 +444,12 @@
 /* Begin PBXTargetDependency section */
 		A14A5865298AB5BE00D2B500 /* PBXTargetDependency */ = {
 			isa = PBXTargetDependency;
-			target = A14A584A298AB5BC00D2B500 /* sdrplay1 */;
+			target = A14A584A298AB5BC00D2B500 /* sdradio1 */;
 			targetProxy = A14A5864298AB5BE00D2B500 /* PBXContainerItemProxy */;
 		};
 		A14A5870298AB5BF00D2B500 /* PBXTargetDependency */ = {
 			isa = PBXTargetDependency;
-			target = A14A584A298AB5BC00D2B500 /* sdrplay1 */;
+			target = A14A584A298AB5BC00D2B500 /* sdradio1 */;
 			targetProxy = A14A586F298AB5BF00D2B500 /* PBXContainerItemProxy */;
 		};
 /* End PBXTargetDependency section */
@@ -609,24 +596,24 @@
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				ASSETCATALOG_COMPILER_GLOBAL_ACCENT_COLOR_NAME = AccentColor;
 				CLANG_ENABLE_MODULES = YES;
-				CODE_SIGN_ENTITLEMENTS = sdrplay1/sdrplay1.entitlements;
+				CODE_SIGN_ENTITLEMENTS = sdradio1/sdradio1.entitlements;
 				CODE_SIGN_IDENTITY = "-";
 				CODE_SIGN_STYLE = Automatic;
 				COMBINE_HIDPI_IMAGES = YES;
 				DEAD_CODE_STRIPPING = YES;
-				DEVELOPMENT_ASSET_PATHS = "\"sdrplay1/Preview Content\"";
+				DEVELOPMENT_ASSET_PATHS = "\"sdradio1/Preview Content\"";
 				ENABLE_PREVIEWS = YES;
 				HEADER_SEARCH_PATHS = "";
-				INFOPLIST_FILE = sdrplay1/Info.plist;
+				INFOPLIST_FILE = sdradio1/Info.plist;
 				LD_RUNPATH_SEARCH_PATHS = (
 					"$(inherited)",
 					"@executable_path/../Frameworks",
 				);
 				LIBRARY_SEARCH_PATHS = "$(inherited)";
 				MACOSX_DEPLOYMENT_TARGET = 12.0;
-				PRODUCT_BUNDLE_IDENTIFIER = ca.nevdull.sdrplay1;
+				PRODUCT_BUNDLE_IDENTIFIER = ca.nevdull.sdradio1;
 				PRODUCT_NAME = "$(TARGET_NAME)";
-				SWIFT_OBJC_BRIDGING_HEADER = "sdrplay1/sdrplay1-Bridging-Header.h";
+				SWIFT_OBJC_BRIDGING_HEADER = "sdradio1/sdradio1-Bridging-Header.h";
 				SWIFT_OPTIMIZATION_LEVEL = "-Onone";
 				SWIFT_VERSION = 5.0;
 			};
@@ -638,15 +625,15 @@
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				ASSETCATALOG_COMPILER_GLOBAL_ACCENT_COLOR_NAME = AccentColor;
 				CLANG_ENABLE_MODULES = YES;
-				CODE_SIGN_ENTITLEMENTS = sdrplay1/sdrplay1.entitlements;
+				CODE_SIGN_ENTITLEMENTS = sdradio1/sdradio1.entitlements;
 				CODE_SIGN_IDENTITY = "-";
 				CODE_SIGN_STYLE = Automatic;
 				COMBINE_HIDPI_IMAGES = YES;
 				DEAD_CODE_STRIPPING = YES;
-				DEVELOPMENT_ASSET_PATHS = "\"sdrplay1/Preview Content\"";
+				DEVELOPMENT_ASSET_PATHS = "\"sdradio1/Preview Content\"";
 				ENABLE_PREVIEWS = YES;
 				HEADER_SEARCH_PATHS = "";
-				INFOPLIST_FILE = sdrplay1/Info.plist;
+				INFOPLIST_FILE = sdradio1/Info.plist;
 				LD_RUNPATH_SEARCH_PATHS = (
 					"$(inherited)",
 					"@executable_path/../Frameworks",
@@ -654,9 +641,9 @@
 				LIBRARY_SEARCH_PATHS = "$(inherited)";
 				MACOSX_DEPLOYMENT_TARGET = 12.0;
 				ONLY_ACTIVE_ARCH = YES;
-				PRODUCT_BUNDLE_IDENTIFIER = ca.nevdull.sdrplay1;
+				PRODUCT_BUNDLE_IDENTIFIER = ca.nevdull.sdradio1;
 				PRODUCT_NAME = "$(TARGET_NAME)";
-				SWIFT_OBJC_BRIDGING_HEADER = "sdrplay1/sdrplay1-Bridging-Header.h";
+				SWIFT_OBJC_BRIDGING_HEADER = "sdradio1/sdradio1-Bridging-Header.h";
 				SWIFT_VERSION = 5.0;
 			};
 			name = Release;
@@ -664,7 +651,6 @@
 		A14A587B298AB5BF00D2B500 /* Debug */ = {
 			isa = XCBuildConfiguration;
 			buildSettings = {
-				ALWAYS_EMBED_SWIFT_STANDARD_LIBRARIES = YES;
 				BUNDLE_LOADER = "$(TEST_HOST)";
 				CODE_SIGN_STYLE = Automatic;
 				COMBINE_HIDPI_IMAGES = YES;
@@ -680,14 +666,13 @@
 				PRODUCT_BUNDLE_IDENTIFIER = ca.nevdull.sdrplay1Tests;
 				PRODUCT_NAME = "$(TARGET_NAME)";
 				SWIFT_VERSION = 5.0;
-				TEST_HOST = "$(BUILT_PRODUCTS_DIR)/sdrplay1.app/Contents/MacOS/sdrplay1";
+				TEST_HOST = "$(BUILT_PRODUCTS_DIR)/sdradio1.app/Contents/MacOS/sdradio1";
 			};
 			name = Debug;
 		};
 		A14A587C298AB5BF00D2B500 /* Release */ = {
 			isa = XCBuildConfiguration;
 			buildSettings = {
-				ALWAYS_EMBED_SWIFT_STANDARD_LIBRARIES = YES;
 				BUNDLE_LOADER = "$(TEST_HOST)";
 				CODE_SIGN_STYLE = Automatic;
 				COMBINE_HIDPI_IMAGES = YES;
@@ -703,14 +688,13 @@
 				PRODUCT_BUNDLE_IDENTIFIER = ca.nevdull.sdrplay1Tests;
 				PRODUCT_NAME = "$(TARGET_NAME)";
 				SWIFT_VERSION = 5.0;
-				TEST_HOST = "$(BUILT_PRODUCTS_DIR)/sdrplay1.app/Contents/MacOS/sdrplay1";
+				TEST_HOST = "$(BUILT_PRODUCTS_DIR)/sdradio1.app/Contents/MacOS/sdradio1";
 			};
 			name = Release;
 		};
 		A14A587E298AB5BF00D2B500 /* Debug */ = {
 			isa = XCBuildConfiguration;
 			buildSettings = {
-				ALWAYS_EMBED_SWIFT_STANDARD_LIBRARIES = YES;
 				CODE_SIGN_STYLE = Automatic;
 				COMBINE_HIDPI_IMAGES = YES;
 				DEAD_CODE_STRIPPING = YES;
@@ -730,7 +714,6 @@
 		A14A587F298AB5BF00D2B500 /* Release */ = {
 			isa = XCBuildConfiguration;
 			buildSettings = {
-				ALWAYS_EMBED_SWIFT_STANDARD_LIBRARIES = YES;
 				CODE_SIGN_STYLE = Automatic;
 				COMBINE_HIDPI_IMAGES = YES;
 				DEAD_CODE_STRIPPING = YES;
@@ -750,7 +733,7 @@
 /* End XCBuildConfiguration section */
 
 /* Begin XCConfigurationList section */
-		A14A5846298AB5BC00D2B500 /* Build configuration list for PBXProject "sdrplay1" */ = {
+		A14A5846298AB5BC00D2B500 /* Build configuration list for PBXProject "sdradio1" */ = {
 			isa = XCConfigurationList;
 			buildConfigurations = (
 				A14A5875298AB5BF00D2B500 /* Debug */,
@@ -759,7 +742,7 @@
 			defaultConfigurationIsVisible = 0;
 			defaultConfigurationName = Release;
 		};
-		A14A5877298AB5BF00D2B500 /* Build configuration list for PBXNativeTarget "sdrplay1" */ = {
+		A14A5877298AB5BF00D2B500 /* Build configuration list for PBXNativeTarget "sdradio1" */ = {
 			isa = XCConfigurationList;
 			buildConfigurations = (
 				A14A5878298AB5BF00D2B500 /* Debug */,
@@ -768,7 +751,7 @@
 			defaultConfigurationIsVisible = 0;
 			defaultConfigurationName = Release;
 		};
-		A14A587A298AB5BF00D2B500 /* Build configuration list for PBXNativeTarget "sdrplay1Tests" */ = {
+		A14A587A298AB5BF00D2B500 /* Build configuration list for PBXNativeTarget "sdradio1Tests" */ = {
 			isa = XCConfigurationList;
 			buildConfigurations = (
 				A14A587B298AB5BF00D2B500 /* Debug */,
@@ -777,7 +760,7 @@
 			defaultConfigurationIsVisible = 0;
 			defaultConfigurationName = Release;
 		};
-		A14A587D298AB5BF00D2B500 /* Build configuration list for PBXNativeTarget "sdrplay1UITests" */ = {
+		A14A587D298AB5BF00D2B500 /* Build configuration list for PBXNativeTarget "sdradio1UITests" */ = {
 			isa = XCConfigurationList;
 			buildConfigurations = (
 				A14A587E298AB5BF00D2B500 /* Debug */,
@@ -788,21 +771,28 @@
 		};
 /* End XCConfigurationList section */
 
+/* Begin XCLocalSwiftPackageReference section */
+		A1F4026D2D4CDC6E0029265D /* XCLocalSwiftPackageReference "../sdrlib" */ = {
+			isa = XCLocalSwiftPackageReference;
+			relativePath = ../sdrlib;
+		};
+/* End XCLocalSwiftPackageReference section */
+
 /* Begin XCSwiftPackageProductDependency section */
-		A16B9D982B3305F400F33DCD /* sdrlib */ = {
+		A1F402682D4BAC8F0029265D /* sdrlib */ = {
 			isa = XCSwiftPackageProductDependency;
 			productName = sdrlib;
 		};
 /* End XCSwiftPackageProductDependency section */
 
 /* Begin XCVersionGroup section */
-		A14A5852298AB5BC00D2B500 /* sdrplay1.xcdatamodeld */ = {
+		A1F4026E2D4D04240029265D /* sdradio1.xcdatamodeld */ = {
 			isa = XCVersionGroup;
 			children = (
-				A14A5853298AB5BC00D2B500 /* sdrplay1.xcdatamodel */,
+				A1F4026F2D4D04240029265D /* sdradio1.xcdatamodel */,
 			);
-			currentVersion = A14A5853298AB5BC00D2B500 /* sdrplay1.xcdatamodel */;
-			path = sdrplay1.xcdatamodeld;
+			currentVersion = A1F4026F2D4D04240029265D /* sdradio1.xcdatamodel */;
+			path = sdradio1.xcdatamodeld;
 			sourceTree = "<group>";
 			versionGroupType = wrapper.xcdatamodel;
 		};

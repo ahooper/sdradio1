@@ -1,14 +1,14 @@
 //
-//  sdrplay1Tests.swift
-//  sdrplay1Tests
+//  sdradio1Tests.swift
+//  sdradio1Tests
 //
 //  Created by Andy Hooper on 2023-02-01.
 //
 
 import XCTest
-@testable import sdrplay1
+@testable import sdradio1
 
-class sdrplay1Tests: XCTestCase {
+class sdradio1Tests: XCTestCase {
 
     override func setUpWithError() throws {
         // Put setup code here. This method is called before the invocation of each test method in the class.
