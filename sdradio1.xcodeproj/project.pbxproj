@@ -3,7 +3,7 @@
 	archiveVersion = 1;
 	classes = {
 	};
-	objectVersion = 60;
+	objectVersion = 70;
 	objects = {
 
 /* Begin PBXBuildFile section */
@@ -24,6 +24,10 @@
 		A14E4C49299F8D9B00977B3E /* TestSpectrum.swift in Sources */ = {isa = PBXBuildFile; fileRef = A14E4C48299F8D9B00977B3E /* TestSpectrum.swift */; };
 		A14E4C4F29A4330700977B3E /* TestCycle.swift in Sources */ = {isa = PBXBuildFile; fileRef = A14E4C4E29A4330700977B3E /* TestCycle.swift */; };
 		A17162932A000BCE0003AFC8 /* OptionalBinding.swift in Sources */ = {isa = PBXBuildFile; fileRef = A17162922A000BCE0003AFC8 /* OptionalBinding.swift */; };
+		A187034A2D64C6CE001AE0B3 /* libfftw3f.3.dylib in Frameworks */ = {isa = PBXBuildFile; fileRef = A18703492D64C6CE001AE0B3 /* libfftw3f.3.dylib */; };
+		A187034B2D64C6CE001AE0B3 /* libfftw3f.3.dylib in Embed Libraries */ = {isa = PBXBuildFile; fileRef = A18703492D64C6CE001AE0B3 /* libfftw3f.3.dylib */; settings = {ATTRIBUTES = (CodeSignOnCopy, ); }; };
+		A18704AE2D66010A001AE0B3 /* libfftw3.3.dylib in Frameworks */ = {isa = PBXBuildFile; fileRef = A18704AD2D66010A001AE0B3 /* libfftw3.3.dylib */; };
+		A18704AF2D66010A001AE0B3 /* libfftw3.3.dylib in Embed Libraries */ = {isa = PBXBuildFile; fileRef = A18704AD2D66010A001AE0B3 /* libfftw3.3.dylib */; settings = {ATTRIBUTES = (CodeSignOnCopy, ); }; };
 		A1AF69E72B3207A300177328 /* FIRFilterTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = A1AF69D92B3207A300177328 /* FIRFilterTests.swift */; };
 		A1AF69E82B3207A300177328 /* ArrayAndComplexAsserts.swift in Sources */ = {isa = PBXBuildFile; fileRef = A1AF69DA2B3207A300177328 /* ArrayAndComplexAsserts.swift */; };
 		A1AF69E92B3207A300177328 /* OscillatorTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = A1AF69DB2B3207A300177328 /* OscillatorTests.swift */; };
@@ -41,6 +45,8 @@
 		A1BFCDCF29FEDADA00DD412C /* StationsView.swift in Sources */ = {isa = PBXBuildFile; fileRef = A1BFCDCE29FEDADA00DD412C /* StationsView.swift */; };
 		A1F402692D4BAC8F0029265D /* sdrlib in Frameworks */ = {isa = PBXBuildFile; productRef = A1F402682D4BAC8F0029265D /* sdrlib */; };
 		A1F402702D4D04240029265D /* sdradio1.xcdatamodeld in Sources */ = {isa = PBXBuildFile; fileRef = A1F4026E2D4D04240029265D /* sdradio1.xcdatamodeld */; };
+		A1F4029D2D5A32760029265D /* Accelerate.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = A14A588F298AB7E800D2B500 /* Accelerate.framework */; };
+		A1F4029F2D5A32930029265D /* sdrlib in Frameworks */ = {isa = PBXBuildFile; productRef = A1F4029E2D5A32930029265D /* sdrlib */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -67,6 +73,18 @@
 			dstPath = "";
 			dstSubfolderSpec = 10;
 			files = (
+			);
+			name = "Embed Libraries";
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		A187034C2D64C6CE001AE0B3 /* Embed Libraries */ = {
+			isa = PBXCopyFilesBuildPhase;
+			buildActionMask = 2147483647;
+			dstPath = "";
+			dstSubfolderSpec = 10;
+			files = (
+				A18704AF2D66010A001AE0B3 /* libfftw3.3.dylib in Embed Libraries */,
+				A187034B2D64C6CE001AE0B3 /* libfftw3f.3.dylib in Embed Libraries */,
 			);
 			name = "Embed Libraries";
 			runOnlyForDeploymentPostprocessing = 0;
@@ -101,6 +119,8 @@
 		A14E4C48299F8D9B00977B3E /* TestSpectrum.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TestSpectrum.swift; sourceTree = "<group>"; };
 		A14E4C4E29A4330700977B3E /* TestCycle.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TestCycle.swift; sourceTree = "<group>"; };
 		A17162922A000BCE0003AFC8 /* OptionalBinding.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = OptionalBinding.swift; sourceTree = "<group>"; };
+		A18703492D64C6CE001AE0B3 /* libfftw3f.3.dylib */ = {isa = PBXFileReference; lastKnownFileType = "compiled.mach-o.dylib"; name = libfftw3f.3.dylib; path = ../../../../../opt/homebrew/Cellar/fftw/3.3.10_2/lib/libfftw3f.3.dylib; sourceTree = "<group>"; };
+		A18704AD2D66010A001AE0B3 /* libfftw3.3.dylib */ = {isa = PBXFileReference; lastKnownFileType = "compiled.mach-o.dylib"; name = libfftw3.3.dylib; path = ../../../../../opt/homebrew/Cellar/fftw/3.3.10_2/lib/libfftw3.3.dylib; sourceTree = "<group>"; };
 		A1AF69D92B3207A300177328 /* FIRFilterTests.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = FIRFilterTests.swift; sourceTree = "<group>"; };
 		A1AF69DA2B3207A300177328 /* ArrayAndComplexAsserts.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ArrayAndComplexAsserts.swift; sourceTree = "<group>"; };
 		A1AF69DB2B3207A300177328 /* OscillatorTests.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = OscillatorTests.swift; sourceTree = "<group>"; };
@@ -118,7 +138,12 @@
 		A1BFCDCE29FEDADA00DD412C /* StationsView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = StationsView.swift; sourceTree = "<group>"; };
 		A1D2B92729FBF20C003C4C97 /* README.md */ = {isa = PBXFileReference; lastKnownFileType = net.daringfireball.markdown; path = README.md; sourceTree = "<group>"; };
 		A1F4026F2D4D04240029265D /* sdradio1.xcdatamodel */ = {isa = PBXFileReference; lastKnownFileType = wrapper.xcdatamodel; path = sdradio1.xcdatamodel; sourceTree = "<group>"; };
+		A1F402882D5A2F820029265D /* tryspectrum.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = tryspectrum.app; sourceTree = BUILT_PRODUCTS_DIR; };
 /* End PBXFileReference section */
+
+/* Begin PBXFileSystemSynchronizedRootGroup section */
+		A1F402892D5A2F820029265D /* tryspectrum */ = {isa = PBXFileSystemSynchronizedRootGroup; explicitFileTypes = {}; explicitFolders = (); path = tryspectrum; sourceTree = "<group>"; };
+/* End PBXFileSystemSynchronizedRootGroup section */
 
 /* Begin PBXFrameworksBuildPhase section */
 		A14A5848298AB5BC00D2B500 /* Frameworks */ = {
@@ -145,6 +170,17 @@
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
+		A1F402852D5A2F820029265D /* Frameworks */ = {
+			isa = PBXFrameworksBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				A18704AE2D66010A001AE0B3 /* libfftw3.3.dylib in Frameworks */,
+				A1F4029F2D5A32930029265D /* sdrlib in Frameworks */,
+				A187034A2D64C6CE001AE0B3 /* libfftw3f.3.dylib in Frameworks */,
+				A1F4029D2D5A32760029265D /* Accelerate.framework in Frameworks */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
 /* End PBXFrameworksBuildPhase section */
 
 /* Begin PBXGroup section */
@@ -155,6 +191,7 @@
 				A14A584D298AB5BC00D2B500 /* sdradio1 */,
 				A14A5866298AB5BE00D2B500 /* sdradio1Tests */,
 				A14A5871298AB5BF00D2B500 /* sdradio1UITests */,
+				A1F402892D5A2F820029265D /* tryspectrum */,
 				A14A584C298AB5BC00D2B500 /* Products */,
 				A14A588E298AB7E700D2B500 /* Frameworks */,
 			);
@@ -166,6 +203,7 @@
 				A14A584B298AB5BC00D2B500 /* sdradio1.app */,
 				A14A5863298AB5BE00D2B500 /* sdradio1Tests.xctest */,
 				A14A586E298AB5BF00D2B500 /* sdradio1UITests.xctest */,
+				A1F402882D5A2F820029265D /* tryspectrum.app */,
 			);
 			name = Products;
 			sourceTree = "<group>";
@@ -227,6 +265,8 @@
 		A14A588E298AB7E700D2B500 /* Frameworks */ = {
 			isa = PBXGroup;
 			children = (
+				A18704AD2D66010A001AE0B3 /* libfftw3.3.dylib */,
+				A18703492D64C6CE001AE0B3 /* libfftw3f.3.dylib */,
 				A14E4C43299D36B100977B3E /* AudioToolbox.framework */,
 				A14A588F298AB7E800D2B500 /* Accelerate.framework */,
 			);
@@ -315,6 +355,30 @@
 			productReference = A14A586E298AB5BF00D2B500 /* sdradio1UITests.xctest */;
 			productType = "com.apple.product-type.bundle.ui-testing";
 		};
+		A1F402872D5A2F820029265D /* tryspectrum */ = {
+			isa = PBXNativeTarget;
+			buildConfigurationList = A1F402942D5A2F830029265D /* Build configuration list for PBXNativeTarget "tryspectrum" */;
+			buildPhases = (
+				A1F402842D5A2F820029265D /* Sources */,
+				A1F402852D5A2F820029265D /* Frameworks */,
+				A1F402862D5A2F820029265D /* Resources */,
+				A187034C2D64C6CE001AE0B3 /* Embed Libraries */,
+			);
+			buildRules = (
+			);
+			dependencies = (
+			);
+			fileSystemSynchronizedGroups = (
+				A1F402892D5A2F820029265D /* tryspectrum */,
+			);
+			name = tryspectrum;
+			packageProductDependencies = (
+				A1F4029E2D5A32930029265D /* sdrlib */,
+			);
+			productName = TrySpectrum;
+			productReference = A1F402882D5A2F820029265D /* tryspectrum.app */;
+			productType = "com.apple.product-type.application";
+		};
 /* End PBXNativeTarget section */
 
 /* Begin PBXProject section */
@@ -322,7 +386,7 @@
 			isa = PBXProject;
 			attributes = {
 				BuildIndependentTargetsInParallel = YES;
-				LastSwiftUpdateCheck = 1420;
+				LastSwiftUpdateCheck = 1610;
 				LastUpgradeCheck = 1610;
 				TargetAttributes = {
 					A14A584A298AB5BC00D2B500 = {
@@ -336,6 +400,10 @@
 					A14A586D298AB5BE00D2B500 = {
 						CreatedOnToolsVersion = 12.4;
 						TestTargetID = A14A584A298AB5BC00D2B500;
+					};
+					A1F402872D5A2F820029265D = {
+						CreatedOnToolsVersion = 16.1;
+						LastSwiftMigration = 1610;
 					};
 				};
 			};
@@ -358,6 +426,7 @@
 				A14A584A298AB5BC00D2B500 /* sdradio1 */,
 				A14A5862298AB5BE00D2B500 /* sdradio1Tests */,
 				A14A586D298AB5BE00D2B500 /* sdradio1UITests */,
+				A1F402872D5A2F820029265D /* tryspectrum */,
 			);
 		};
 /* End PBXProject section */
@@ -381,6 +450,13 @@
 			runOnlyForDeploymentPostprocessing = 0;
 		};
 		A14A586C298AB5BE00D2B500 /* Resources */ = {
+			isa = PBXResourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		A1F402862D5A2F820029265D /* Resources */ = {
 			isa = PBXResourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
@@ -436,6 +512,13 @@
 			buildActionMask = 2147483647;
 			files = (
 				A14A5873298AB5BF00D2B500 /* sdradio1UITests.swift in Sources */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		A1F402842D5A2F820029265D /* Sources */ = {
+			isa = PBXSourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -730,6 +813,78 @@
 			};
 			name = Release;
 		};
+		A1F402952D5A2F830029265D /* Debug */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
+				ASSETCATALOG_COMPILER_GLOBAL_ACCENT_COLOR_NAME = AccentColor;
+				CLANG_CXX_LANGUAGE_STANDARD = "gnu++20";
+				CLANG_ENABLE_MODULES = YES;
+				CODE_SIGN_ENTITLEMENTS = TrySpectrum/TrySpectrum.entitlements;
+				CODE_SIGN_STYLE = Automatic;
+				COMBINE_HIDPI_IMAGES = YES;
+				CURRENT_PROJECT_VERSION = 1;
+				DEVELOPMENT_ASSET_PATHS = "\"TrySpectrum/Preview Content\"";
+				ENABLE_PREVIEWS = YES;
+				GCC_C_LANGUAGE_STANDARD = gnu17;
+				GENERATE_INFOPLIST_FILE = YES;
+				INFOPLIST_KEY_NSHumanReadableCopyright = "";
+				LD_RUNPATH_SEARCH_PATHS = (
+					"$(inherited)",
+					"@executable_path/../Frameworks",
+				);
+				LIBRARY_SEARCH_PATHS = (
+					"$(inherited)",
+					/opt/homebrew/Cellar/fftw/3.3.10_2/lib,
+				);
+				LOCALIZATION_PREFERS_STRING_CATALOGS = YES;
+				MACOSX_DEPLOYMENT_TARGET = 15.1;
+				MARKETING_VERSION = 1.0;
+				PRODUCT_BUNDLE_IDENTIFIER = ca.nevdull.tryspectrum;
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				SWIFT_ACTIVE_COMPILATION_CONDITIONS = "DEBUG $(inherited)";
+				SWIFT_EMIT_LOC_STRINGS = YES;
+				SWIFT_OBJC_BRIDGING_HEADER = "TrySpectrum/TrySpectrum-Bridging-Header.h";
+				SWIFT_OPTIMIZATION_LEVEL = "-Onone";
+				SWIFT_VERSION = 5.0;
+			};
+			name = Debug;
+		};
+		A1F402962D5A2F830029265D /* Release */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
+				ASSETCATALOG_COMPILER_GLOBAL_ACCENT_COLOR_NAME = AccentColor;
+				CLANG_CXX_LANGUAGE_STANDARD = "gnu++20";
+				CLANG_ENABLE_MODULES = YES;
+				CODE_SIGN_ENTITLEMENTS = TrySpectrum/TrySpectrum.entitlements;
+				CODE_SIGN_STYLE = Automatic;
+				COMBINE_HIDPI_IMAGES = YES;
+				CURRENT_PROJECT_VERSION = 1;
+				DEVELOPMENT_ASSET_PATHS = "\"TrySpectrum/Preview Content\"";
+				ENABLE_PREVIEWS = YES;
+				GCC_C_LANGUAGE_STANDARD = gnu17;
+				GENERATE_INFOPLIST_FILE = YES;
+				INFOPLIST_KEY_NSHumanReadableCopyright = "";
+				LD_RUNPATH_SEARCH_PATHS = (
+					"$(inherited)",
+					"@executable_path/../Frameworks",
+				);
+				LIBRARY_SEARCH_PATHS = (
+					"$(inherited)",
+					/opt/homebrew/Cellar/fftw/3.3.10_2/lib,
+				);
+				LOCALIZATION_PREFERS_STRING_CATALOGS = YES;
+				MACOSX_DEPLOYMENT_TARGET = 15.1;
+				MARKETING_VERSION = 1.0;
+				PRODUCT_BUNDLE_IDENTIFIER = ca.nevdull.tryspectrum;
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				SWIFT_EMIT_LOC_STRINGS = YES;
+				SWIFT_OBJC_BRIDGING_HEADER = "TrySpectrum/TrySpectrum-Bridging-Header.h";
+				SWIFT_VERSION = 5.0;
+			};
+			name = Release;
+		};
 /* End XCBuildConfiguration section */
 
 /* Begin XCConfigurationList section */
@@ -769,6 +924,15 @@
 			defaultConfigurationIsVisible = 0;
 			defaultConfigurationName = Release;
 		};
+		A1F402942D5A2F830029265D /* Build configuration list for PBXNativeTarget "tryspectrum" */ = {
+			isa = XCConfigurationList;
+			buildConfigurations = (
+				A1F402952D5A2F830029265D /* Debug */,
+				A1F402962D5A2F830029265D /* Release */,
+			);
+			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
+		};
 /* End XCConfigurationList section */
 
 /* Begin XCLocalSwiftPackageReference section */
@@ -781,6 +945,11 @@
 /* Begin XCSwiftPackageProductDependency section */
 		A1F402682D4BAC8F0029265D /* sdrlib */ = {
 			isa = XCSwiftPackageProductDependency;
+			productName = sdrlib;
+		};
+		A1F4029E2D5A32930029265D /* sdrlib */ = {
+			isa = XCSwiftPackageProductDependency;
+			package = A1F4026D2D4CDC6E0029265D /* XCLocalSwiftPackageReference "../sdrlib" */;
 			productName = sdrlib;
 		};
 /* End XCSwiftPackageProductDependency section */

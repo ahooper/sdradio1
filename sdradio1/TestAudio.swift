@@ -16,7 +16,7 @@ class TestAudio: Thread, ReceiveThreadProtocol {
 
     public init(signalHz:Double, level:Float=1.0) {
 #if true
-        let sampleHz = audioOut.sampleFrequency() * 500 // stress test, startup and occaisonal glitches
+        let sampleHz = audioOut.sampleFrequency() * 300 // stress test, startup and occaisonal glitches
         tone = Oscillator<RealSamples>(signalHz: signalHz, sampleHz: sampleHz, level: level)
         let audioSampleHz = Int(audioOut.sampleFrequency())
         let downSampleAF = UpFIRDown(source:tone,

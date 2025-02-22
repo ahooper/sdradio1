@@ -44,7 +44,7 @@ class TestCycle: Thread, ReceiveThreadProtocol {
         sdr.sampleHz = Double(AUDIO_SAMPLE_HZ) * 50
 
         let spectrumSource:SDRplay? = nil
-        spectrum = SpectrumData(source: spectrumSource, fftLength: 1024)
+        spectrum = SpectrumData(source: spectrumSource, fftLength: 1024, windowFunction: WindowFunction.blackman)
         timeReports.append(sdr.sinkWaitTime)
         timeReports.append(downSampleIF.sinkWaitTime)
         timeReports.append(demodulated.sinkWaitTime)

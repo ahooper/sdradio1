@@ -291,8 +291,9 @@ struct ContentView: View {
             }
             DispatchQueue.main.async {
                 frequency = selected.frequency
-                if started { receiveThread.setFrequency(frequency) }
-                if let demod = selected.demodulator {
+                if started { receiveThread.setFrequency(frequency * 1e3) }
+                if let demod = selected.demodulator,
+                   demodulator != demod {
                     demodulator = demod
                     if started { receiveThread.setDemodulator(demodulator) }
                 }

@@ -63,7 +63,7 @@ class AppDelegate: NSObject, NSApplicationDelegate {
                 let Wx = Band(context: context)
                 Wx.name          = "Weather"
                 Wx.antenna       = "Antenna A"
-                Wx.demodulator   = "FM"
+                Wx.demodulator   = "NFM"
                 Wx.frequency     = 162_400
                 Wx.step          = 25
                 

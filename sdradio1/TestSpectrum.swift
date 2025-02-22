@@ -29,18 +29,20 @@ class TestSpectrum: Thread, ReceiveThreadProtocol {
     let spectrum: SpectrumData?
     let audioOut = AudioOutput() // initialize to set audio sample rate
 #if true
-    let tone:Oscillator<RealSamples>
+    typealias Osc = OscillatorPrecise<RealSamples>
+    //typealias Osc = Oscillator
+    let tone:Osc
 
     override init() {
         let SAMPLE_HZ = 2e6
         let TONE_HZ = 440e0
         let CARRIER_HZ = SAMPLE_HZ/5
-        tone = Oscillator<RealSamples>(signalHz:TONE_HZ, sampleHz:SAMPLE_HZ, level:0.2)
+        tone = Osc(signalHz:TONE_HZ, sampleHz:SAMPLE_HZ, level:0.4)
         let modulated = AMModulate(source: tone,
                                    factor: 0.5,
                                    carrierHz: CARRIER_HZ,
                                    suppressedCarrier: false)
-        spectrum = SpectrumData(source: modulated, fftLength: 1024)
+        spectrum = SpectrumData(source: modulated, fftLength: 1024, windowFunction: WindowFunction.blackman)
         spectrum?.centreHz = 0
         let mixDown = Mixer(source: modulated, signalHz: -CARRIER_HZ)
         let downSampleHz = audioOut.sampleFrequency() * 10
@@ -49,7 +51,7 @@ class TestSpectrum: Thread, ReceiveThreadProtocol {
                                      Int(mixDown.sampleFrequency()),
                                      15, // * 10 * 2
                                      Float(10e3) / Float(downSampleHz),
-                                     windowFunction:WindowFunction.blackman) // kaiser(5.0f));
+                                     windowFunction:WindowFunction.hamming) // kaiser(5.0f));
         let demodulated = AMEnvDemodulate(source: downSampleIQ, factor: 5)
         let audioSampleHz = Int(audioOut.sampleFrequency())
         let downSampleAF = UpFIRDown(source:demodulated,
@@ -57,7 +59,7 @@ class TestSpectrum: Thread, ReceiveThreadProtocol {
                                      Int(downSampleHz),
                                      15, // * 25 * 2
                                      Float(5000) / Float(audioSampleHz),
-                                     windowFunction:WindowFunction.blackman) // kaiser(5.0f));
+                                     windowFunction:WindowFunction.hamming) // kaiser(5.0f));
         assert(downSampleAF.sampleFrequency() == audioOut.sampleFrequency())
         audioOut.connect(source: downSampleAF)
 
@@ -65,7 +67,7 @@ class TestSpectrum: Thread, ReceiveThreadProtocol {
         /*Thread*/name = "TestSpectrum"
     }
 #else
-    let tone:Oscillator<ComplexSamples>
+    let tone:OscillatorPrecise<ComplexSamples>
 
     override init() {
         let SAMPLE_HZ = audioOut.sampleFrequency()

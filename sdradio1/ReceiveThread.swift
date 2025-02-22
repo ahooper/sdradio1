@@ -31,7 +31,7 @@ class MockReceiveThread: ReceiveThreadProtocol {
     let spectrum: SpectrumData?
     init() {
         mockSource = Oscillator<ComplexSamples>(signalHz: 1, sampleHz: 5)
-        spectrum = SpectrumData(source: mockSource, fftLength: 16)
+        spectrum = SpectrumData(source: mockSource, fftLength: 16, windowFunction: WindowFunction.hann)
     }
     func start() {
         print("MockReceiveThread", "start")
@@ -94,7 +94,8 @@ class ReceiveThread: Thread, ReceiveThreadProtocol {
 
         demodulator = FMDemodulator(sdr, audioOut)
         
-        spectrum = SpectrumData(source: sdr, fftLength: 1024)
+        spectrum = SpectrumData(source: sdr, fftLength: 2048, windowFunction: WindowFunction.blackman)
+        receiving = false
         
         super.init()
         /*Thread*/name = "ReceiveThread"
@@ -127,26 +128,31 @@ class ReceiveThread: Thread, ReceiveThreadProtocol {
     
     func setDemodulator(_ key: String) {
         print("ReceiveThread", "setDemodulator", key)
-//        stopReceive()
+        let restart = receiving
+        if receiving { stopReceive() }
         if demodulator.head != nil { sdr.disconnect(sink: demodulator.head!) }
         audioOut.disconnect()
         if let demod = Self.demodulators[key] {
             demodulator = demod.init(sdr, audioOut)
         }
+        if restart { startReceive() }
     }
-    
+    var receiving: Bool
     func startReceive() {
         print("ReceiveThread", "startReceive")
         sdr.setOption(SDRplay.OptDebug, SDRplay.Opt_Enable)
         sdr.startReceive()
         sdr.setOption(SDRplay.OptDebug, SDRplay.Opt_Disable)
         audioOut.resume()
+        receiving = true
     }
     
     func stopReceive() {
         print("ReceiveThread", "stopReceive")
         audioOut.stop()
         sdr.stopReceive()
+        spectrum?.freeze()
+        receiving = false
     }
     
     override func cancel() {
