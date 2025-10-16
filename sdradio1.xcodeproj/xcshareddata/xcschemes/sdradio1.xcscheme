@@ -48,6 +48,17 @@
                ReferencedContainer = "container:sdradio1.xcodeproj">
             </BuildableReference>
          </TestableReference>
+         <TestableReference
+            skipped = "NO"
+            parallelizable = "YES">
+            <BuildableReference
+               BuildableIdentifier = "primary"
+               BlueprintIdentifier = "A17DDE362D6F629A00DC4BFE"
+               BuildableName = "sdradio1Tests2.xctest"
+               BlueprintName = "sdradio1Tests2"
+               ReferencedContainer = "container:sdradio1.xcodeproj">
+            </BuildableReference>
+         </TestableReference>
       </Testables>
    </TestAction>
    <LaunchAction

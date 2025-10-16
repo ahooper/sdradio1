@@ -14,7 +14,7 @@
 		A14A5856298AB5BE00D2B500 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = A14A5855298AB5BE00D2B500 /* Assets.xcassets */; };
 		A14A5859298AB5BE00D2B500 /* Preview Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = A14A5858298AB5BE00D2B500 /* Preview Assets.xcassets */; };
 		A14A585C298AB5BE00D2B500 /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = A14A585A298AB5BE00D2B500 /* Main.storyboard */; };
-		A14A5868298AB5BE00D2B500 /* sdrplay1Tests.swift in Sources */ = {isa = PBXBuildFile; fileRef = A14A5867298AB5BE00D2B500 /* sdrplay1Tests.swift */; };
+		A14A5868298AB5BE00D2B500 /* sdradio1Tests.swift in Sources */ = {isa = PBXBuildFile; fileRef = A14A5867298AB5BE00D2B500 /* sdradio1Tests.swift */; };
 		A14A5873298AB5BF00D2B500 /* sdradio1UITests.swift in Sources */ = {isa = PBXBuildFile; fileRef = A14A5872298AB5BF00D2B500 /* sdradio1UITests.swift */; };
 		A14A5890298AB7E800D2B500 /* Accelerate.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = A14A588F298AB7E800D2B500 /* Accelerate.framework */; };
 		A14A58C4298AE69600D2B500 /* TestAudio.swift in Sources */ = {isa = PBXBuildFile; fileRef = A14A58C3298AE69600D2B500 /* TestAudio.swift */; };
@@ -28,6 +28,7 @@
 		A187034B2D64C6CE001AE0B3 /* libfftw3f.3.dylib in Embed Libraries */ = {isa = PBXBuildFile; fileRef = A18703492D64C6CE001AE0B3 /* libfftw3f.3.dylib */; settings = {ATTRIBUTES = (CodeSignOnCopy, ); }; };
 		A18704AE2D66010A001AE0B3 /* libfftw3.3.dylib in Frameworks */ = {isa = PBXBuildFile; fileRef = A18704AD2D66010A001AE0B3 /* libfftw3.3.dylib */; };
 		A18704AF2D66010A001AE0B3 /* libfftw3.3.dylib in Embed Libraries */ = {isa = PBXBuildFile; fileRef = A18704AD2D66010A001AE0B3 /* libfftw3.3.dylib */; settings = {ATTRIBUTES = (CodeSignOnCopy, ); }; };
+		A187052B2D6F606A001AE0B3 /* sdrlib in Frameworks */ = {isa = PBXBuildFile; productRef = A187052A2D6F606A001AE0B3 /* sdrlib */; };
 		A1AF69E72B3207A300177328 /* FIRFilterTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = A1AF69D92B3207A300177328 /* FIRFilterTests.swift */; };
 		A1AF69E82B3207A300177328 /* ArrayAndComplexAsserts.swift in Sources */ = {isa = PBXBuildFile; fileRef = A1AF69DA2B3207A300177328 /* ArrayAndComplexAsserts.swift */; };
 		A1AF69E92B3207A300177328 /* OscillatorTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = A1AF69DB2B3207A300177328 /* OscillatorTests.swift */; };
@@ -104,7 +105,7 @@
 		A14A585D298AB5BE00D2B500 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 		A14A585E298AB5BE00D2B500 /* sdradio1.entitlements */ = {isa = PBXFileReference; lastKnownFileType = text.plist.entitlements; path = sdradio1.entitlements; sourceTree = "<group>"; };
 		A14A5863298AB5BE00D2B500 /* sdradio1Tests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = sdradio1Tests.xctest; sourceTree = BUILT_PRODUCTS_DIR; };
-		A14A5867298AB5BE00D2B500 /* sdrplay1Tests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = sdrplay1Tests.swift; sourceTree = "<group>"; };
+		A14A5867298AB5BE00D2B500 /* sdradio1Tests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = sdradio1Tests.swift; sourceTree = "<group>"; };
 		A14A5869298AB5BE00D2B500 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 		A14A586E298AB5BF00D2B500 /* sdradio1UITests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = sdradio1UITests.xctest; sourceTree = BUILT_PRODUCTS_DIR; };
 		A14A5872298AB5BF00D2B500 /* sdradio1UITests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = sdradio1UITests.swift; sourceTree = "<group>"; };
@@ -121,6 +122,7 @@
 		A17162922A000BCE0003AFC8 /* OptionalBinding.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = OptionalBinding.swift; sourceTree = "<group>"; };
 		A18703492D64C6CE001AE0B3 /* libfftw3f.3.dylib */ = {isa = PBXFileReference; lastKnownFileType = "compiled.mach-o.dylib"; name = libfftw3f.3.dylib; path = ../../../../../opt/homebrew/Cellar/fftw/3.3.10_2/lib/libfftw3f.3.dylib; sourceTree = "<group>"; };
 		A18704AD2D66010A001AE0B3 /* libfftw3.3.dylib */ = {isa = PBXFileReference; lastKnownFileType = "compiled.mach-o.dylib"; name = libfftw3.3.dylib; path = ../../../../../opt/homebrew/Cellar/fftw/3.3.10_2/lib/libfftw3.3.dylib; sourceTree = "<group>"; };
+		A18705292D6F605C001AE0B3 /* Package.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; name = Package.swift; path = ../sdrlib/Package.swift; sourceTree = "<group>"; };
 		A1AF69D92B3207A300177328 /* FIRFilterTests.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = FIRFilterTests.swift; sourceTree = "<group>"; };
 		A1AF69DA2B3207A300177328 /* ArrayAndComplexAsserts.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ArrayAndComplexAsserts.swift; sourceTree = "<group>"; };
 		A1AF69DB2B3207A300177328 /* OscillatorTests.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = OscillatorTests.swift; sourceTree = "<group>"; };
@@ -160,6 +162,7 @@
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				A187052B2D6F606A001AE0B3 /* sdrlib in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -247,7 +250,7 @@
 			isa = PBXGroup;
 			children = (
 				A1AF69D82B3207A300177328 /* sdrlibTests */,
-				A14A5867298AB5BE00D2B500 /* sdrplay1Tests.swift */,
+				A14A5867298AB5BE00D2B500 /* sdradio1Tests.swift */,
 				A14A5869298AB5BE00D2B500 /* Info.plist */,
 			);
 			path = sdradio1Tests;
@@ -265,6 +268,7 @@
 		A14A588E298AB7E700D2B500 /* Frameworks */ = {
 			isa = PBXGroup;
 			children = (
+				A18705292D6F605C001AE0B3 /* Package.swift */,
 				A18704AD2D66010A001AE0B3 /* libfftw3.3.dylib */,
 				A18703492D64C6CE001AE0B3 /* libfftw3f.3.dylib */,
 				A14E4C43299D36B100977B3E /* AudioToolbox.framework */,
@@ -492,7 +496,7 @@
 				A1AF69F32B3207A300177328 /* FIRKernelTests.swift in Sources */,
 				A1AF69EB2B3207A300177328 /* IIRFilterExercise.swift in Sources */,
 				A1AF69F02B3207A300177328 /* WindowFunctionTests.swift in Sources */,
-				A14A5868298AB5BE00D2B500 /* sdrplay1Tests.swift in Sources */,
+				A14A5868298AB5BE00D2B500 /* sdradio1Tests.swift in Sources */,
 				A1AF69E72B3207A300177328 /* FIRFilterTests.swift in Sources */,
 				A1AF69E82B3207A300177328 /* ArrayAndComplexAsserts.swift in Sources */,
 				A1AF69ED2B3207A300177328 /* FMDemodulateTests.swift in Sources */,
@@ -739,14 +743,14 @@
 				COMBINE_HIDPI_IMAGES = YES;
 				DEAD_CODE_STRIPPING = YES;
 				HEADER_SEARCH_PATHS = /usr/local/include;
-				INFOPLIST_FILE = sdrplay1Tests/Info.plist;
+				INFOPLIST_FILE = sdradio1Tests/Info.plist;
 				LD_RUNPATH_SEARCH_PATHS = (
 					"$(inherited)",
 					"@executable_path/../Frameworks",
 					"@loader_path/../Frameworks",
 				);
-				MACOSX_DEPLOYMENT_TARGET = 12.0;
-				PRODUCT_BUNDLE_IDENTIFIER = ca.nevdull.sdrplay1Tests;
+				MACOSX_DEPLOYMENT_TARGET = 12.4;
+				PRODUCT_BUNDLE_IDENTIFIER = ca.nevdull.sdradio1Tests;
 				PRODUCT_NAME = "$(TARGET_NAME)";
 				SWIFT_VERSION = 5.0;
 				TEST_HOST = "$(BUILT_PRODUCTS_DIR)/sdradio1.app/Contents/MacOS/sdradio1";
@@ -761,14 +765,14 @@
 				COMBINE_HIDPI_IMAGES = YES;
 				DEAD_CODE_STRIPPING = YES;
 				HEADER_SEARCH_PATHS = /usr/local/include;
-				INFOPLIST_FILE = sdrplay1Tests/Info.plist;
+				INFOPLIST_FILE = sdradio1Tests/Info.plist;
 				LD_RUNPATH_SEARCH_PATHS = (
 					"$(inherited)",
 					"@executable_path/../Frameworks",
 					"@loader_path/../Frameworks",
 				);
-				MACOSX_DEPLOYMENT_TARGET = 12.0;
-				PRODUCT_BUNDLE_IDENTIFIER = ca.nevdull.sdrplay1Tests;
+				MACOSX_DEPLOYMENT_TARGET = 12.4;
+				PRODUCT_BUNDLE_IDENTIFIER = ca.nevdull.sdradio1Tests;
 				PRODUCT_NAME = "$(TARGET_NAME)";
 				SWIFT_VERSION = 5.0;
 				TEST_HOST = "$(BUILT_PRODUCTS_DIR)/sdradio1.app/Contents/MacOS/sdradio1";
@@ -781,16 +785,16 @@
 				CODE_SIGN_STYLE = Automatic;
 				COMBINE_HIDPI_IMAGES = YES;
 				DEAD_CODE_STRIPPING = YES;
-				INFOPLIST_FILE = sdrplay1UITests/Info.plist;
+				INFOPLIST_FILE = sdradio1UITests/Info.plist;
 				LD_RUNPATH_SEARCH_PATHS = (
 					"$(inherited)",
 					"@executable_path/../Frameworks",
 					"@loader_path/../Frameworks",
 				);
-				PRODUCT_BUNDLE_IDENTIFIER = ca.nevdull.sdrplay1UITests;
+				PRODUCT_BUNDLE_IDENTIFIER = ca.nevdull.sdradio1UITests;
 				PRODUCT_NAME = "$(TARGET_NAME)";
 				SWIFT_VERSION = 5.0;
-				TEST_TARGET_NAME = sdrplay1;
+				TEST_TARGET_NAME = sdradio1;
 			};
 			name = Debug;
 		};
@@ -800,16 +804,16 @@
 				CODE_SIGN_STYLE = Automatic;
 				COMBINE_HIDPI_IMAGES = YES;
 				DEAD_CODE_STRIPPING = YES;
-				INFOPLIST_FILE = sdrplay1UITests/Info.plist;
+				INFOPLIST_FILE = sdradio1UITests/Info.plist;
 				LD_RUNPATH_SEARCH_PATHS = (
 					"$(inherited)",
 					"@executable_path/../Frameworks",
 					"@loader_path/../Frameworks",
 				);
-				PRODUCT_BUNDLE_IDENTIFIER = ca.nevdull.sdrplay1UITests;
+				PRODUCT_BUNDLE_IDENTIFIER = ca.nevdull.sdradio1UITests;
 				PRODUCT_NAME = "$(TARGET_NAME)";
 				SWIFT_VERSION = 5.0;
-				TEST_TARGET_NAME = sdrplay1;
+				TEST_TARGET_NAME = sdradio1;
 			};
 			name = Release;
 		};
@@ -943,6 +947,11 @@
 /* End XCLocalSwiftPackageReference section */
 
 /* Begin XCSwiftPackageProductDependency section */
+		A187052A2D6F606A001AE0B3 /* sdrlib */ = {
+			isa = XCSwiftPackageProductDependency;
+			package = A1F4026D2D4CDC6E0029265D /* XCLocalSwiftPackageReference "../sdrlib" */;
+			productName = sdrlib;
+		};
 		A1F402682D4BAC8F0029265D /* sdrlib */ = {
 			isa = XCSwiftPackageProductDependency;
 			productName = sdrlib;

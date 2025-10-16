@@ -94,7 +94,7 @@ class ReceiveThread: Thread, ReceiveThreadProtocol {
 
         demodulator = FMDemodulator(sdr, audioOut)
         
-        spectrum = SpectrumData(source: sdr, fftLength: 2048, windowFunction: WindowFunction.blackman)
+        spectrum = SpectrumData(source: sdr, fftLength: 2048, windowFunction: WindowFunction.kaiser4)
         receiving = false
         
         super.init()
@@ -170,6 +170,10 @@ class ReceiveThread: Thread, ReceiveThreadProtocol {
     func set(antenna: String) {
         sdr.setOption(SDRplay.OptAntenna, antenna)
     }
+    
+    // https://sdrplay.com/wp-content/uploads/2018/06/Gain_and_AGC_in_SDRuno.pdf
+    // https://www.sdrplay.com/docs/SDRplay_AGC_technote_r2p1.pdf
+    // https://radiojove.net/SUG/Pubs/SDRPlay%20RSP2%20Settings,%20Flagg%20(2018).pdf
     
     func getGains()-> [Int] {
         [0, -5, -10, -15, -20, -25, -30, -35, -40, -45, -50, -55, -60, -65, -70, -75, -80] // TODO:
